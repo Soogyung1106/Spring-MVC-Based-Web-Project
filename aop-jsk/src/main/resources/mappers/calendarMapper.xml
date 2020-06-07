@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.aiw.web.mapper.CalendarMapper">
+  
+ 	<select id="getTime" resultType="string">
+ 		select now()
+ 	</select>
+ 	
+     <insert id="insert"> 
+   		insert into tk_schedule (schedule_idx, schedule_num, schedule_subject, schedule_desc, schedule_date) values
+ 		(#{schedule_idx}, #{schedule_num}, #{schedule_subject}, #{schedule_desc}, #{schedule_date})
+     </insert> 
+ 	
+     <select id="selectByid" resultType="DateVO">
+ 		select * from tk_schedule where schedule_idx = #{schedule_idx}
+     </select>
+ 	
+     <select id="selectAll" resultType="org.aiw.web.domain.DateVO">
+     <![CDATA[
+ 		select * from tk_schedule
+      ]]> 
+     </select>
+ 	
+     <update id="update">
+	 	update tk_schedule set schedule_idx =#{schedule_idx}, schedule_num =#{schedule_num}, schedule_subject =#{schedule_subject}, 
+			schedule_desc =#{schedule_desc}, schedule_date =#{schedule_date} 
+		 where schedule_idx = #{schedule_idx}
+    </update>
+ 
+    <delete id="delete">
+		delete from tk_schedule where schedule_idx = #{schedule_idx}
+    </delete>
+	
+</mapper>  
