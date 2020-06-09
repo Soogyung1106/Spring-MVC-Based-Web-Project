@@ -396,9 +396,7 @@ for(int index = 1; index <= endDay; index++)
        <c:forEach var="schedule" items="${schedules}" >
        		
 			<c:if test="${date == schedule.schedule_date}"> <!-- 만약에 db에 일정이 등록되어 있다면 차례대로 출력 -->
-			  	<!--<c:out value="${schedule.schedule_subject}"/>-->
-			 	<!--<c:url value="/schedule/read?schedule_idx=${schedule.schedule_idx}" var="url"/><a href="${url}">보기</a>-->
-			 	<!--  <a href="${url}"><c:out value="${schedule.schedule_subject}"/></a>-->
+			  	
 			 	<c:url value="/schedule/read?schedule_idx=${schedule.schedule_idx}" var="url"/><a href="${url}"><c:out value="${schedule.schedule_subject}"/></a>
 			 	
 			 	<BR>

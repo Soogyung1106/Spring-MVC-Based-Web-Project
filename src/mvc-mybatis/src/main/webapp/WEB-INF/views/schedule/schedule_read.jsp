@@ -19,7 +19,9 @@
 		</table>
 		
 		<br>
-		<c:url value="/schedule/modify?schedule_idx=${schedule.schedule_idx}" var="url"/><a href="${url}">정보 수정</a>
+		<c:url value="/schedule/modify?schedule_idx=${schedule.schedule_idx}" var="url"/><a href="${url}">수정</a>
+		<br>
+		<c:url value="/schedule/delete?schedule_idx=${schedule.schedule_idx}" var="url"/><a href="${url}">삭제</a>
 		<br>
 		<c:url value="/schedule/list" var="url"/><a href="${url}">캘린더로 가기</a>
 		

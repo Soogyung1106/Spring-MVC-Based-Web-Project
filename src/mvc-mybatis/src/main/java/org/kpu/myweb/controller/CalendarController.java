@@ -48,6 +48,8 @@ public class CalendarController {
         return "schedule/schedule_list";
     }
     
+    
+    
     @RequestMapping(value = "/read", method = RequestMethod.GET)
     public String readSchedule(@RequestParam("schedule_idx") String schedule_idx, Model model) throws Exception {
     	ScheduleVO schedule = scheduleService.readSchedule(schedule_idx);
@@ -56,8 +58,7 @@ public class CalendarController {
         model.addAttribute("schedule", schedule);
         return "schedule/schedule_read";
     }
-    
-    
+
     
     @RequestMapping(value = "/modify", method = RequestMethod.GET)
     public String modifyScheduleGet(@RequestParam("schedule_idx") String schedule_idx, Model model) throws Exception {
@@ -76,7 +77,14 @@ public class CalendarController {
         return "redirect:/schedule/list";
     }
     
-    
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String deleteSchedule(@RequestParam("schedule_idx") String schedule_idx, Model model) throws Exception {
+    	scheduleService.deleteSchedule(schedule_idx);
+    	
+		logger.info(" /delete?schedule_idx=OO URL called. then deleteSchedule method executed.");
+        
+		return "redirect:/schedule/list";
+    }
 
   
 	

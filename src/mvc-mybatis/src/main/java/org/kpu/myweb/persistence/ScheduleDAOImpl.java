@@ -37,6 +37,11 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 		sqlSession.update(namespace + ".update", schedule);
 	}
 	
+	public void delete(String schedule_idx) throws Exception{
+		sqlSession.delete(namespace + ".delete", schedule_idx);
+	}
+	
+	
 	
 	
 	/* 원본

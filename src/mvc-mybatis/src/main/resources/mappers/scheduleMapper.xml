@@ -29,9 +29,13 @@
      </select>
      
      <update id="update">
-	 	update tk_schedule set schedule_subject =#{schedule_subject}, schedule_desc =#{schedule_desc}, schedule_date =#{schedule_date} 
+	 	update tk_schedule set schedule_idx =#{schedule_idx}, schedule_subject =#{schedule_subject}, schedule_desc =#{schedule_desc}, schedule_date =#{schedule_date} 
 	 	where schedule_idx = #{schedule_idx}
      </update>
+     
+     <delete id="delete">
+		delete from tk_schedule where schedule_idx = #{schedule_idx}
+     </delete>
      
      
   

@@ -20,6 +20,21 @@
     <servlet-name>appServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
+   <!-- 
+   <servlet>
+    <description></description>
+    <display-name>CalendarController</display-name>
+    <servlet-name>CalendarController</servlet-name>
+    <servlet-class>org.kpu.myweb.controller.CalendarController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CalendarController</servlet-name>
+    <url-pattern>CalendarController</url-pattern>
+  </servlet-mapping>
+   -->
+  
+   
   <servlet>
     <description></description>
     <display-name>MemberController</display-name>
@@ -31,6 +46,8 @@
     <url-pattern>/MemberController</url-pattern>
   </servlet-mapping>
   
+  
+   
   <filter>
   	<filter-name>CharacterEncodingFilter</filter-name>
  	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

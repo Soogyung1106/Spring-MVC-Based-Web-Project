@@ -12,7 +12,10 @@
 	<div align=center>
 		<header>스케줄 수정</header>
 		<form name=form1 action="http://localhost:8080/myweb/schedule/modify/" method="post">
+		<input type="hidden" name="schedule_idx" readonly value="${schedule.schedule_idx}" > 
+		
 		<table>
+			
 			<tr><th>제목</th><td><input type="text" name="schedule_subject" value="${schedule.schedule_subject}"></td></tr>
 			<tr><th>설명</th><td><input type="text" name="schedule_desc" value="${schedule.schedule_desc}"></td></tr>
 			<tr><th>날짜</th><td><input type="text" name="schedule_date" value="${schedule.schedule_date}"></td></tr>
