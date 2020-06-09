@@ -376,31 +376,34 @@ for(int index = 1; index <= endDay; index++)
 
        <%
        
-       //만약에 DB에 일정이 등록되어 있다면....일정을 출력
-   
-		
-       String compare_date = Integer.toString(iUseDate); //20200609 String 타입
-       //2020-06-09 포맷으로 만들기
+       
+	   //20200609 포맷임
+       String compare_date = Integer.toString(iUseDate);
+       
+       //2020-06-09 포맷으로 만들기(db date 타입 데이터와 비교하기 위해)
+       compare_date = compare_date.substring(0, 4) + "-"+compare_date.substring(4,6)+ "-"+compare_date.substring(6, 8);
+       
+       
        pageContext.setAttribute("compare_date", compare_date);
        
        out.println("<BR>");
        
+       
         %>
        
        <c:set var="date" value= "${compare_date}" /> 
-       
+       <BR>
        <c:forEach var="schedule" items="${schedules}" >
-       		 
-			<c:if test="${date == schedule.schedule_date}">			  
-			  	<c:out value="${schedule.schedule_subject}"/>
+       		
+			<c:if test="${date == schedule.schedule_date}"> <!-- 만약에 db에 일정이 등록되어 있다면 차례대로 출력 -->
+			  	<!--<c:out value="${schedule.schedule_subject}"/>-->
+			 	<!--<c:url value="/schedule/read?schedule_idx=${schedule.schedule_idx}" var="url"/><a href="${url}">보기</a>-->
+			 	<!--  <a href="${url}"><c:out value="${schedule.schedule_subject}"/></a>-->
+			 	<c:url value="/schedule/read?schedule_idx=${schedule.schedule_idx}" var="url"/><a href="${url}"><c:out value="${schedule.schedule_subject}"/></a>
+			 	
 			 	<BR>
 			</c:if>
 			 
-			
-			<!-- 
-			<c:out value="${schedule.schedule_date}"/> 
-			<BR> 
-			--><!-- 2020-06-09 -->
 		</c:forEach> 
          
        

@@ -8,6 +8,9 @@ public interface ScheduleDAO {
 	
 	public void add(ScheduleVO schedule) throws Exception;
 	public List<ScheduleVO> readList() throws Exception;
+	public ScheduleVO read(String schedule_idx) throws Exception;
+	public void update(ScheduleVO schedule) throws Exception;
+	
 	
 	/* 원본
 	public void add(StudentVO student) throws Exception;

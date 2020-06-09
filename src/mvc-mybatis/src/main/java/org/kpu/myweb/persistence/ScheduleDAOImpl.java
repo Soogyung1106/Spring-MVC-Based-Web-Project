@@ -27,6 +27,16 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 		return schedulelist;
 	}
 	
+	public ScheduleVO read(String schedule_idx) throws Exception{
+		ScheduleVO vo = sqlSession.selectOne(namespace+".selectByIdx", schedule_idx);
+		return vo; 
+	}
+	
+	
+	public void update(ScheduleVO schedule) throws Exception{
+		sqlSession.update(namespace + ".update", schedule);
+	}
+	
 	
 	
 	/* 원본

@@ -23,17 +23,18 @@
     	select * from tk_schedule
       ]]> 
      </select>
-     <!--
- 		select date_format(schedule_date, '%Y%m%d'), schedule_desc, schedule_idx, schedule_subject from tk_schedule
-    	-->
-    
-     <!-- 
-     <select id="selectBydate" resultType="ScheduleVO">
- 		select schedule_subject from student where id = #{schedule_date}
+     
+     <select id="selectByIdx" resultType="ScheduleVO">
+ 		select * from tk_schedule where schedule_idx = #{schedule_idx}
      </select>
-      -->
+     
+     <update id="update">
+	 	update tk_schedule set schedule_subject =#{schedule_subject}, schedule_desc =#{schedule_desc}, schedule_date =#{schedule_date} 
+	 	where schedule_idx = #{schedule_idx}
+     </update>
      
      
+  
  	<!--  원본
      <insert id="insert"> 
    		insert into student (id, passwd, username, snum, depart, mobile, email) values

@@ -48,8 +48,37 @@ public class CalendarController {
         return "schedule/schedule_list";
     }
     
+    @RequestMapping(value = "/read", method = RequestMethod.GET)
+    public String readSchedule(@RequestParam("schedule_idx") String schedule_idx, Model model) throws Exception {
+    	ScheduleVO schedule = scheduleService.readSchedule(schedule_idx);
+    	
+		logger.info(" /read?schedule_idx=OO URL called. then readSchedule method executed.");
+        model.addAttribute("schedule", schedule);
+        return "schedule/schedule_read";
+    }
+    
+    
+    
+    @RequestMapping(value = "/modify", method = RequestMethod.GET)
+    public String modifyScheduleGet(@RequestParam("schedule_idx") String schedule_idx, Model model) throws Exception {
+    	ScheduleVO schedule = scheduleService.readSchedule(schedule_idx);
+    	
+		logger.info(" /modify?schedule_idx=OO URL GET method called. then forward schedule_modify.jsp.");
+        model.addAttribute("schedule", schedule);
+        return "schedule/schedule_modify";
+    }
+    
+    @RequestMapping(value = "/modify", method = RequestMethod.POST)
+    public String modifySchedulePost(@ModelAttribute("schedule") ScheduleVO vo) throws Exception {
+    	scheduleService.updateSchedule(vo);
+		logger.info(vo.toString());
+		logger.info(" /modify?schedule_idx=kang URL POST method called. then modifySchedulePost method executed.");
+        return "redirect:/schedule/list";
+    }
+    
+    
 
-	
+  
 	
 	/* 원본
 	@RequestMapping(value = {"/list"}, method = RequestMethod.GET)

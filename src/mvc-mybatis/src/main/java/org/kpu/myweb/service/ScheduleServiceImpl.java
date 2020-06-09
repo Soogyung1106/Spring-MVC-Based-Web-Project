@@ -21,6 +21,14 @@ public class ScheduleServiceImpl implements ScheduleService {
 		return scheduleDAO.readList();
 	}
 	
+	public ScheduleVO readSchedule(String schedule_idx) throws Exception{
+		return scheduleDAO.read(schedule_idx);
+	}
+	
+	public void updateSchedule(ScheduleVO schedule) throws Exception{
+		scheduleDAO.update(schedule);
+	}
+	
 	
 	/*
 	public StudentVO readMember(String id) throws Exception {

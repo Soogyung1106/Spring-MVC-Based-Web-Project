@@ -8,6 +8,9 @@ public interface ScheduleService {
 	
 	public void addSchedule(ScheduleVO schedule) throws Exception;
 	public List<ScheduleVO> readScheduleList() throws Exception;
+	public ScheduleVO readSchedule(String schedule_idx) throws Exception;
+	public void updateSchedule(ScheduleVO schedule) throws Exception;
+	
 	
 	/* 원본
 	public StudentVO readMember(String id) throws Exception;

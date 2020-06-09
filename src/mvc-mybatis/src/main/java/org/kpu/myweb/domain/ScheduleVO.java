@@ -2,11 +2,19 @@ package org.kpu.myweb.domain;
 
 public class ScheduleVO {
 	
-	//private String schedule_idx;
+	private String schedule_idx;
 	private String schedule_subject;
 	private String schedule_desc;
 	private String schedule_date;
-
+	
+	
+	public String getSchedule_idx() {
+		return schedule_idx;
+	}
+	public void setSchedule_idx(String schedule_idx) {
+		this.schedule_idx = schedule_idx;
+	}
+	
 
 	public String getSchedule_subject() {
 		return schedule_subject;
@@ -30,8 +38,8 @@ public class ScheduleVO {
 
 	@Override
 	public String toString() {
-		//return "ScheduleVO [schedule_idx=" + schedule_idx + ", schedule_subject=" + schedule_subject + ", schedule_desc=" + schedule_desc + ", schedule_date=" + schedule_date +  "]";
-		return "ScheduleVO [schedule_subject=" + schedule_subject + ", schedule_desc=" + schedule_desc + ", schedule_date=" + schedule_date +  "]";
+		return "ScheduleVO [schedule_idx=" + schedule_idx + ", schedule_subject=" + schedule_subject + ", schedule_desc=" + schedule_desc + ", schedule_date=" + schedule_date +  "]";
+		//return "ScheduleVO [schedule_subject=" + schedule_subject + ", schedule_desc=" + schedule_desc + ", schedule_date=" + schedule_date +  "]";
 	}
 
 	
