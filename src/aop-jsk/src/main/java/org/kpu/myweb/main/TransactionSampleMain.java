@@ -15,7 +15,7 @@ public class TransactionSampleMain {
 		System.out.println("안녕하세요 TRANSACTION-MYBATIS");
 	
 		ctx = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-		//ctx = new ClassPathXmlApplicationContext("classpath:applicationContext_annotation.xml");
+
 		
 		ScheduleService scheduleService = ctx.getBean(ScheduleService.class);  // by Class name
 		

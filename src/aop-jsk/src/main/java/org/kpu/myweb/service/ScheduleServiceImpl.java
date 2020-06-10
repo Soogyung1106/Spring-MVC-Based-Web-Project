@@ -39,6 +39,7 @@ public class ScheduleServiceImpl implements ScheduleService {
 		scheduleDAO.delete(schedule_idx);
 	}
 	
+	//트랜잭션 추가함수
 	public void updateScheduleList(ScheduleVO schedule1, ScheduleVO schedule2) throws Exception {
 		scheduleDAO.update(schedule2);
 		scheduleDAO.update(schedule1); //예외발생

@@ -3,15 +3,16 @@
 	header
 	{
 		margin:20px 10px 40px 10px; 
-		font-family:"Freestyle Script","Mistral";
+		font-family:"Times New Roman","Times New Roman";
 		font-size:50px;
 		text-shadow:3px 3px 8px gray;
 		text-align:center;
 	}
 
 	body {
-	    color: black;
-	    font-family: '맑은 고딕', '돋움', '고딕';
+	    color: #87CEEB;
+	    font-family: 'Times New Roman', 'Times New Roman', 'Times New Roman';
+	    background-color: #090823;
 	}
 
 	table {
@@ -20,9 +21,9 @@
 
 	th, td {
 		font-size: 10pt;
-		border: 1px solid lightgray;
+		border: 1.5px solid #090823;
 		height: 30px;
 		padding: 5px;
-		color: #000000;
-		background-color: #EAF2D3;
+		color: white;
+		background-color: #003246;
 	}

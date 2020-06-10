@@ -12,15 +12,12 @@ Calendar cal = Calendar.getInstance();
  
 
 String strYear = request.getParameter("year");
-
 String strMonth = request.getParameter("month");
 
  
 
 int year = cal.get(Calendar.YEAR);
-
 int month = cal.get(Calendar.MONTH);
-
 int date = cal.get(Calendar.DATE);
 
  
@@ -30,11 +27,8 @@ if(strYear != null)
 {
 
   year = Integer.parseInt(strYear);
-
   month = Integer.parseInt(strMonth);
-
  
-
 }else{
 
  
@@ -48,11 +42,8 @@ cal.set(year, month, 1);
  
 
 int startDay = cal.getMinimum(java.util.Calendar.DATE);
-
 int endDay = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH);
-
 int start = cal.get(java.util.Calendar.DAY_OF_WEEK);
-
 int newLine = 0;
 
  
@@ -60,14 +51,10 @@ int newLine = 0;
 //오늘 날짜 저장.
 
 Calendar todayCal = Calendar.getInstance();
-
 SimpleDateFormat sdf = new SimpleDateFormat("yyyMMdd");
 
 int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
- 
-
- 
 
 %>
 
@@ -83,9 +70,10 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
        </script>
 
        <style TYPE="text/css">
-
+	
              body {
-
+			 background-color: #090823;
+			 
              scrollbar-face-color: #F6F6F6;
 
              scrollbar-highlight-color: #bbbbbb;
@@ -105,11 +93,11 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
              }
 
 
-             td {font-family: "돋움"; font-size: 9pt; color:#595959;}
+             td {font-family: "Times New Roman"; font-size: 9pt; color:#FFFFFF; font-weight: bolder}
 
-             th {font-family: "돋움"; font-size: 9pt; color:#000000;}
+             th {font-family: "Times New Roman"; font-size: 9pt; color:#000000; font-weight: bolder}
 
-             select {font-family: "돋움"; font-size: 9pt; color:#595959;}
+             select {font-family: "Times New Roman"; font-size: 9pt; color:#595959; font-weight: bolder}
 
 
              .divDotText {
@@ -121,13 +109,13 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
              }
 
  
-            A:link { font-size:9pt; font-family:"돋움";color:#000000; text-decoration:none; }
+            A:link { font-size:9pt; font-family:"Times New Roman";color:#1EA5FF; text-decoration:none; font-weight: bolder}
 
-            A:visited { font-size:9pt; font-family:"돋움";color:#000000; text-decoration:none; }
+            A:visited { font-size:9pt; font-family:"Times New Roman";color:#1EA5FF; text-decoration:none; font-weight: bolder}
 
-            A:active { font-size:9pt; font-family:"돋움";color:red; text-decoration:none; }
+            A:active { font-size:9pt; font-family:"Times New Roman";color:red; text-decoration:none; font-weight: bold}
 
-            A:hover { font-size:9pt; font-family:"돋움";color:red;text-decoration:none;}
+            A:hover { font-size:9pt; font-family:"Times New Roman";color:red;text-decoration:none; font-weight: bolder}
 
  
 
@@ -148,11 +136,8 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 <tr>
 
        <td align ="right">
-			  <!-- 
-             <input type="button" onclick="javascript:location.href='<c:url value="/schedule/register" var="url" />'" value="일정 등록"/>
-			  -->
-			
-			<c:url value="/schedule/register" var="url"/><a href="${url}">일정 등록</a>
+		
+			<c:url value="/schedule/register" var="url"  /><a href="${url}" style = "font-weight: bolder">일정 등록</a>
      
        </td>
 
@@ -164,7 +149,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
 <!--날짜 네비게이션  -->
 
-<table width="100%" border="0" cellspacing="1" cellpadding="1" id="KOO" bgcolor="#F3F9D7" style="border:1px solid #CED99C">
+<table width="100%" border="0" cellspacing="1" cellpadding="1" id="KOO" bgcolor="#193349" style="border:1px solid #193349; font-weight: bold" >
 
  
 
@@ -187,7 +172,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
        <tr>
              <td align="center" >
 
-                    <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year-1%>&amp;month=<%=month%>" target="_self">
+                    <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year-1%>&amp;month=<%=month%>" target="_self" style="color: white; font-weight: bolder">
 
                            <b>&lt;&lt;</b><!-- 이전해 -->
 
@@ -195,7 +180,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
                     <%if(month > 0 ){ %>
 
-                    <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year%>&amp;month=<%=month-1%>" target="_self">
+                    <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year%>&amp;month=<%=month-1%>" target="_self" style="color: white; font-weight: bolder">
 
                            <b>&lt;</b><!-- 이전달 -->
 
@@ -219,7 +204,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
                     <%if(month < 11 ){ %>
 
-                    <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year%>&amp;month=<%=month+1%>" target="_self">
+                    <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year%>&amp;month=<%=month+1%>" target="_self" style="color: white; font-weight: bolder">
 
                            <!-- 다음달 --><b>&gt;</b>
 
@@ -231,7 +216,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
                     <%} %>
 
-                    <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year+1%>&amp;month=<%=month%>" target="_self">
+                    <a href="<c:url value='/CalendarExam2.jsp' />?year=<%=year+1%>&amp;month=<%=month%>" target="_self" style="color: white; font-weight: bolder">
 
                            <!-- 다음해 --><b>&gt;&gt;</b>
 
@@ -253,11 +238,11 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
 <br>
 
-<table border="0" cellspacing="1" cellpadding="1" bgcolor="#FFFFFF">
+<table border="0" cellspacing="1" cellpadding="1" bgcolor="090823">
 
 <THEAD>
 
-<TR bgcolor="#CECECE">
+<TR bgcolor="#003246">
 
        <TD width='100px'>
 
@@ -342,7 +327,7 @@ for(int index = 1; index <= endDay; index++)
 
        }else if(newLine == 6){    color = "#529dbc";
 
-       }else{                     color = "BLACK"; };
+       }else{                     color = "#FFFFFF"; };
 
  
 
@@ -354,11 +339,11 @@ for(int index = 1; index <= endDay; index++)
        int iUseDate = Integer.parseInt(sUseDate);
 
 
-       String backColor = "#EFEFEF";
+       String backColor = "#00283C";
 
        if(iUseDate == intToday ) {
 
-             backColor = "#c9c9c9";
+             backColor = "#576E77";
 
        }
 
