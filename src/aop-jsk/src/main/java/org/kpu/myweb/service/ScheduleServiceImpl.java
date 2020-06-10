@@ -2,14 +2,13 @@ package org.kpu.myweb.service;
 
 import java.util.List;
 
-
-import org.kpu.myweb.controller.CalendarController;
 import org.kpu.myweb.domain.ScheduleVO;
 import org.kpu.myweb.persistence.ScheduleDAO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ScheduleServiceImpl implements ScheduleService {
@@ -18,6 +17,8 @@ public class ScheduleServiceImpl implements ScheduleService {
 	
 	@Autowired
 	private ScheduleDAO scheduleDAO;
+
+	
 	
 	public void addSchedule(ScheduleVO schedule) throws Exception{
 		scheduleDAO.add(schedule);
@@ -40,27 +41,13 @@ public class ScheduleServiceImpl implements ScheduleService {
 		scheduleDAO.delete(schedule_idx);
 	}
 	
-	
-	/*
-	public StudentVO readMember(String id) throws Exception {
-		return memberDAO.read(id);
+	//트랜잭션 처리가 필요한 메서드 (READ_COMMITTED : 다른 트랜잭션에 의해 커밋된 데이터만 읽을 수 있도록/ REQUIRED: 기존 트랜잭션 있으면 포함되어 실행, 없으면 새롭게 만들기)
+	@Transactional ( propagation=Propagation.SUPPORTS, isolation=Isolation.READ_COMMITTED, timeout=10 )
+	public void updateScheduleList(ScheduleVO schedule1, ScheduleVO schedule2) throws Exception {
+		scheduleDAO.update(schedule2);
+		scheduleDAO.update(schedule1);
 	}
 	
-	public List<StudentVO> readMemberList() throws Exception{
-		return memberDAO.readList();
-	}
 	
-	public void addMember(StudentVO student) throws Exception {
-		memberDAO.add(student);
-	}
-	
-	public void deleteMember(String id) throws Exception {
-		memberDAO.delete(id);
-	}
-	
-	public void updateMember(StudentVO student) throws Exception {
-		memberDAO.update(student);
-	}
-	*/
 	
 }

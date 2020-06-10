@@ -1,13 +1,16 @@
 /*테이블 생성*/
-SELECT `tk_schedule`.`schedule_idx`,
-    `tk_schedule`.`schedule_num`,
-    `tk_schedule`.`schedule_subject`,
-    `tk_schedule`.`schedule_desc`,
-    `tk_schedule`.`schedule_date`
-FROM `springdb`.`tk_schedule`;
 
+CREATE TABLE `tk_schedule` (
+    `schedule_idx` int NOT NULL AUTO_INCREMENT,
+    `schedule_subject` varchar(10) DEFAULT NULL,
+    `schedule_desc` varchar(45) DEFAULT NULL,
+    `schedule_date` DATE NOT NULL,
+
+    PRIMARY KEY (`schedule_idx`)
+); 
 
 /*샘플 데이터 생성*/
+
 INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('훈련',  '6월 첫째 주 기초 체력 강화 훈련', '2020-06-06');
 INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('훈련',  '6월 둘째 주 기초 체력 강화 훈련', '2020-06-13');
 INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('훈련',  '6월 셋째 주 기초 체력 강화 훈련', '2020-06-20');
@@ -21,6 +24,7 @@ INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('
  
  /*테이블 삭제*/
 drop table tk_schedule;
+
 
 /* test */
 select * from tk_schedule;

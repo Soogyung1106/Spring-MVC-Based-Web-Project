@@ -6,12 +6,13 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.kpu.myweb.domain.ScheduleVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class ScheduleDAOImpl implements ScheduleDAO {
 	
-	@Autowired
+	@Autowired  
 	private SqlSession sqlSession;
 	
 	private static final String namespace = "org.kpu.myweb.mapper.ScheduleMapper";
@@ -19,7 +20,7 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 	public void add(ScheduleVO schedule) throws Exception{
 		sqlSession.insert(namespace + ".insert", schedule);
 	}
-	
+		
 	
 	public List<ScheduleVO> readList() throws Exception{
 		List<ScheduleVO> schedulelist = new ArrayList<ScheduleVO>();

@@ -78,12 +78,20 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/m
 		    <version>2.9.8</version>
 		</dependency>		
 		
-		<!-- AspectJ -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>${org.aspectj-version}</version>
-		</dependency>	
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+	    <dependency>
+	      	<groupId>org.aspectj</groupId>
+	      	<artifactId>aspectjrt</artifactId>
+	      	<version>${org.aspectj-version}</version>
+	    </dependency>
+	    <dependency>
+	      	<groupId>org.aspectj</groupId>
+	      	<artifactId>aspectjtools</artifactId>
+	      	<version>${org.aspectj-version}</version>
+	    </dependency>
+		
+		
+		
 		
 		<!-- Logging -->
 		<dependency>
