@@ -14,14 +14,13 @@ public class TransactionSampleMain {
 		// TODO Auto-generated method stub
 		System.out.println("안녕하세요 TRANSACTION-MYBATIS");
 	
-		//ctx = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-		ctx = new ClassPathXmlApplicationContext("classpath:applicationContext_annotation.xml");
+		ctx = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+		//ctx = new ClassPathXmlApplicationContext("classpath:applicationContext_annotation.xml");
 		
 		ScheduleService scheduleService = ctx.getBean(ScheduleService.class);  // by Class name
 		
 		// 예외상황 : max 45자를 넘김.
-		String schedule1 = "스케줄1";
-		ScheduleVO vo1 = new ScheduleVO(); 
+		String schedule1 = "스케줄1";		ScheduleVO vo1 = new ScheduleVO(); 
 		vo1.setSchedule_subject(schedule1);  vo1.setSchedule_date("2020-06-10");
 		vo1.setschedule_desc("가나다라마바사자차카타파하가나다라마바사자차카타파하가나다라마바사자차카타파하가나다라마바사자차카타파하가나다라마바사자차카타파하가나다라마바사자차카타파하");
 		

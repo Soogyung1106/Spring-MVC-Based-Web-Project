@@ -20,39 +20,25 @@ public class ScheduleDAOTest {
 	private ScheduleDAO dao;
 	private static Logger logger = LoggerFactory.getLogger(ScheduleDAOTest.class);
 	
-	/* 원본
+
 	@Test
-	public void testReadByid() throws Exception {
-		StudentVO vo;
-		vo = dao.read("hansol");
+	public void testReadByidx() throws Exception {
+		ScheduleVO vo;
+		vo = dao.read("1");
 
 		logger.info(vo.toString());
 	}
 	@Test
 	public void testReadList() throws Exception {
-		List<StudentVO> voList;
+		List<ScheduleVO> voList;
 		voList = dao.readList();
 
-		for(StudentVO svo : voList) {
+		for(ScheduleVO svo : voList) {
 			logger.info(svo.toString());
 		}
 	}
-	*/
-	
-	/*
-	@Test
-	public void testUpdate() throws Exception {
-		ScheduleVO vo
-		ScheduleVO test;
-		test.setSchedule_date(schedule_date);
-	
-		vo = dao.update(test);
 
-		//for(ScheduleVO svo : voList) {
-			logger.info(vo.toString());
-		//}
-	}
-	*/
+
 	
 	
 	
