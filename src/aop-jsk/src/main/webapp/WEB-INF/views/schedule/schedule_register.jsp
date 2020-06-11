@@ -11,6 +11,8 @@
 	<div align=center>
 		<header>일정 등록</header>
 		<form name=form1 action="http://localhost:8080/myweb/schedule/register/" method="post">
+	
+		
 		<table>	
 			<tr><th>날짜</th><td><input type="text" name="schedule_date"  placeholder="YYYY-MM-DD "></td></tr>
 			<tr><th>일정</th><td><input type="text" name="schedule_subject" autofocus placeholder="입력하세요"></td></tr>

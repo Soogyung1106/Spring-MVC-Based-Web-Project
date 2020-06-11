@@ -5,7 +5,7 @@ CREATE TABLE `tk_schedule` (
     `schedule_subject` varchar(10) DEFAULT NULL,
     `schedule_desc` varchar(45) DEFAULT NULL,
     `schedule_date` DATE NOT NULL,
-    `schedule_count` int NOT NULL,
+    `schedule_count` int NOT NULL DEFAULT 0,
 
     PRIMARY KEY (`schedule_idx`)
 ); 
