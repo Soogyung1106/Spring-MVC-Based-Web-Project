@@ -27,6 +27,7 @@
      <select id="selectByIdx" resultType="ScheduleVO">
  		select * from tk_schedule where schedule_idx = #{schedule_idx}
      </select>
+    
      
      <update id="update">
 	 	update tk_schedule set schedule_idx =#{schedule_idx}, schedule_subject =#{schedule_subject}, schedule_desc =#{schedule_desc}, schedule_date =#{schedule_date} 
@@ -36,6 +37,10 @@
      <delete id="delete">
 		delete from tk_schedule where schedule_idx = #{schedule_idx}
      </delete>
+     
+	<update id="updateByIdx">
+ 		update tk_schedule set schedule_count = schedule_count+1 where schedule_idx = #{schedule_idx}
+    </update>    
      
      
   

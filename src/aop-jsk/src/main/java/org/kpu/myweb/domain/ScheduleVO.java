@@ -2,11 +2,11 @@ package org.kpu.myweb.domain;
 
 public class ScheduleVO {
 	
-	private String schedule_idx;
-	private String schedule_subject;
-	private String schedule_desc;
-	private String schedule_date;
-	
+	private String schedule_idx; //인덱스
+	private String schedule_subject; //일정 제목
+	private String schedule_desc; //일정 자세한 설명
+	private String schedule_date; //날짜
+	private String schedule_count; //조회수
 	
 	public String getSchedule_idx() {
 		return schedule_idx;
@@ -35,10 +35,17 @@ public class ScheduleVO {
 		this.schedule_date = schedule_date;
 	}
 	
+	public String getSchedule_count() {
+		return schedule_count;
+	}
+	public void setSchedule_count(String schedule_count) {
+		this.schedule_count = schedule_count;
+	}
+	
 
 	@Override
 	public String toString() {
-		return "ScheduleVO [schedule_idx=" + schedule_idx + ", schedule_subject=" + schedule_subject + ", schedule_desc=" + schedule_desc + ", schedule_date=" + schedule_date +  "]";
+		return "ScheduleVO [schedule_idx=" + schedule_idx + ", schedule_subject=" + schedule_subject + ", schedule_desc=" + schedule_desc + ", schedule_date=" + schedule_date + ", schedule_count=" + schedule_count+ "]";
 		//return "ScheduleVO [schedule_subject=" + schedule_subject + ", schedule_desc=" + schedule_desc + ", schedule_date=" + schedule_date +  "]";
 	}
 

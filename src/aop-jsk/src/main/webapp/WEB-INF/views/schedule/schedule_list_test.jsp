@@ -24,8 +24,8 @@
     
 	
     <!-- Site Icons --> <!-- 브라우저 창 위에 보이는 아이콘 -->
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="shortcut icon" href="../resources/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../resources/images/apple-touch-icon.png">
 	
 
 	<!-- Google Fonts -->
@@ -33,10 +33,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet"> 
 
 	<!-- Custom & Default Styles -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/carousel.css">
-    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../resources/css/carousel.css">
+    <link rel="stylesheet" href="../resources/css/style.css">
 
 	<!--[if lt IE 9]>
 		<script src="js/vendor/html5shiv.min.js"></script>
@@ -64,16 +64,18 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html"><img src="images/logo-normal.png" alt=""></a>
+                        <!-- <a class="navbar-brand" href="index.html"><img src="../resources/images/logo-normal.png" alt=""></a>-->
+                        <a class="navbar-brand" href="#"><img src="../resources/images/logo-normal.png" alt=""></a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="home_of_Coach.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home </a>
-                              
+                                <!-- <a href="home_of_Coach.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home </a>  -->
+                              	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home </a>
                             </li>
                             <li class="dropdown">
-                                <a href="teamData_coach.jsp.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Team Data </a>
+                                <!-- <a href="teamData_coach.jsp.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Team Data </a>-->
+                              	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Team Data </a>
                               
                             </li>
                             <li class="dropdown">
@@ -85,7 +87,8 @@
                                 
                             </li>
                             <li class="dropdown">
-                                <a href="Feedback_coach.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Coach Note</a>
+                                <!-- <a href="Feedback_coach.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Coach Note</a> -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Coach Note</a>
                                 
                             </li>
                             <li><a href="#">Contact</a></li>
@@ -102,7 +105,8 @@
             <div class="vertical-header-wrapper">
                 <nav class="nav-menu">
                     <div class="logo">
-                        <a href="index.html"><img src="images/rsz_1logo.png" alt=""> </a>
+                        <!-- <a href="index.html"><img src="images/rsz_1logo.png" alt=""> </a>-->
+                        <a href="#"><img src="../resources/images/rsz_1logo.png" alt=""> </a>
                     </div><!-- end logo -->
 
                     <div class="margin-block"></div>
@@ -110,12 +114,13 @@
                     <ul class="primary-menu">
 
 						<!--Home ëª©ì°¨ -->
-                        <li class="child-menu"><a href="home_of_Coach.jsp">Home</a>
-                            
+                        <!-- <li class="child-menu"><a href="home_of_Coach.jsp">Home</a> -->
+                        <li class="child-menu"><a href="#">Home</a>    
                         </li>
 
 						 <!--My Data ëª©ì°¨ -->
-                        <li class="teamData_coach.jsp"><a href="teamData_coach.jsp">Team Data </a>
+                        <!-- <li class="teamData_coach.jsp"><a href="teamData_coach.jsp">Team Data </a> -->
+                        <li class="#"><a href="#">Team Data </a>
                           
                         </li>
 
@@ -125,45 +130,27 @@
                          
                         </li>
 
-	      
-					
-						<!--Calendar ëª©ì°¨ -->	
-						<li><a href="#">Calendar</a></li>
-
+	     				 	
+						<li><a href="/schedule_list">Calendar</a></li>
+						 
+						
 						<!--Coach Note ëª©ì°¨ -->	
 						<li><a href="Feedback_coach.jsp">Coach Note</a></li>
+						<li><a href="#">Coach Note</a></li>
 						
 						<!--Contact ëª©ì°¨: ëë¥´ë©´ íì ì ë³´ -->  
                         <li><a href="#">Contact</a></li>
 
-                        <!--<li><a href="https://html.design">Download <i class="fa fa-shopping-bag"></i></a></li> -->
+
                     </ul>
                     
                     <div class="margin-block"></div>
 					
-					<!--
-                    <div class="menu-search">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="What you are looking?">
-                                <button class="btn btn-primary"><i class="fa fa-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-					--> <!-- end menu-search -->
+					
 
                     <div class="margin-block"></div>
 
-					<!--
-                    <div class="menu-social">
-                        <ul class="list-inline text-center">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                    </div>--><!-- end menu -->
-
+				
                 </nav><!-- end nav-menu -->
             </div><!-- end vertical-header-wrapper -->
         </header><!-- end header -->
@@ -205,23 +192,17 @@
  
 <div id="wrapper">  
  
- <!-- 
- <div id="btn_group" style="text-align:center"  >
- <a href="playerData_Coach.jsp"> <button id="test_btn1">Player </button></a> 
-<a href="matchData_Coach.jsp"> <button id="test_btn2">Match </button></a>
-<a href="printHeatmap_Coach.jsp"> <button id="test_btn3">Position </button></a>
-</div>
-  -->
+
  </html>
 
 <!---------------------------------------------- DB에서 읽은 그래프 ---------------------------------------------------->
 
-
-
 <div style="float: center;">
-<iframe name="f4" src="schedule_list.jsp" width="1200" height="700" scrolling="no" frameborder="no">
- </iframe>
+<iframe name="f4" src="./schedule_list" width="1200" height="700" scrolling="no" frameborder="no">Calendar</iframe>
 </div>
+						
+
+
 
 
                       
@@ -230,18 +211,18 @@
 
 
     <!-- -----------------------------------------------jQuery Files ------------------------------------------------------------------>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/carousel.js"></script>
-    <script src="js/parallax.js"></script>
-    <script src="js/rotate.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/masonry.js"></script>
-    <script src="js/masonry-4-col.js"></script>
+    <script src="../resources/js/jquery.min.js"></script>
+    <script src="../resources/js/bootstrap.min.js"></script>
+    <script src="../resources/js/carousel.js"></script>
+    <script src="../resources/js/parallax.js"></script>
+    <script src="../resources/js/rotate.js"></script>
+    <script src="../resources/js/custom.js"></script>
+    <script src="../resources/js/masonry.js"></script>
+    <script src="../resources/js/masonry-4-col.js"></script>
     <!-- VIDEO BG PLUGINS -->
-    <script src="videos/libs/swfobject.js"></script> 
-    <script src="videos/libs/modernizr.video.js"></script> 
-    <script src="videos/libs/video_background.js"></script> 
+    <script src="../resources/videos/libs/swfobject.js"></script> 
+    <script src="../resources/videos/libs/modernizr.video.js"></script> 
+    <script src="../resources/videos/libs/video_background.js"></script> 
     <script>
         jQuery(document).ready(function($) {
             var Video_back = new video_background($("#home"), { 
@@ -250,9 +231,9 @@
                 "loop": true,           //Loop when it reaches the end
                 "autoplay": true,       //Autoplay at start
                 "muted": true,          //Muted at start
-                "mp4":"videos/video.mp4" ,     //Path to video mp4 format
+                "mp4":"../resources/videos/video.mp4" ,     //Path to video mp4 format
                 "video_ratio": 1.7778,              // width/height -> If none provided sizing of the video is set to adjust
-                "fallback_image": "images/dummy.png",   //Fallback image path
+                "fallback_image": "../resources/images/dummy.png",   //Fallback image path
                 "priority": "html5"             //Priority for html5 (if set to flash and tested locally will give a flash security error)
             });
         });

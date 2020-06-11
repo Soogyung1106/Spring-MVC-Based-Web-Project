@@ -5,21 +5,22 @@ CREATE TABLE `tk_schedule` (
     `schedule_subject` varchar(10) DEFAULT NULL,
     `schedule_desc` varchar(45) DEFAULT NULL,
     `schedule_date` DATE NOT NULL,
+    `schedule_count` int NOT NULL,
 
     PRIMARY KEY (`schedule_idx`)
 ); 
 
 /*샘플 데이터 생성*/
 
-INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('훈련',  '6월 첫째 주 기초 체력 강화 훈련', '2020-06-06');
-INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('훈련',  '6월 둘째 주 기초 체력 강화 훈련', '2020-06-13');
-INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('훈련',  '6월 셋째 주 기초 체력 강화 훈련', '2020-06-20');
-INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('훈련',  '6월 넷째 주 기초 체력 강화 훈련', '2020-06-27');
-INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('결승전',  '최종 결승전', '2020-06-28');
-INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('회식',  '결승전 후 회식입니다. 모두들 꼭 참여하시기 바랍니다', '2020-06-28');
-INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('1차 연습 경기',  '결승전 준비 경기 ', '2020-06-07');
-INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('2차 연습 경기',  '결승전 준비 경기 ', '2020-06-14');
-INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date) VALUE('3차 연습 경기',  '결승전 준비 경기 ', '2020-06-21');
+INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date, schedule_count) VALUE('훈련',  '6월 첫째 주 기초 체력 강화 훈련', '2020-06-06', '0');
+INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date, schedule_count) VALUE('훈련',  '6월 둘째 주 기초 체력 강화 훈련', '2020-06-13', '0');
+INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date, schedule_count) VALUE('훈련',  '6월 셋째 주 기초 체력 강화 훈련', '2020-06-20', '0');
+INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date, schedule_count) VALUE('훈련',  '6월 넷째 주 기초 체력 강화 훈련', '2020-06-27', '0');
+INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date, schedule_count) VALUE('결승전',  '최종 결승전', '2020-06-28', '0');
+INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date, schedule_count) VALUE('회식',  '결승전 후 회식입니다. 모두들 꼭 참여하시기 바랍니다', '2020-06-28', '0');
+INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date, schedule_count) VALUE('1차 연습 경기',  '결승전 준비 경기 ', '2020-06-07', '0');
+INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date, schedule_count) VALUE('2차 연습 경기',  '결승전 준비 경기 ', '2020-06-14', '0');
+INSERT INTO tk_schedule (schedule_subject, schedule_desc, schedule_date, schedule_count) VALUE('3차 연습 경기',  '결승전 준비 경기 ', '2020-06-21', '0');
  
  
  /*테이블 삭제*/

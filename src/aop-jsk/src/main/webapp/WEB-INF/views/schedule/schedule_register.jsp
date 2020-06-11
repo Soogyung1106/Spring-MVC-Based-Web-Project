@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>스케줄 등록</title>
-	<link rel="stylesheet" href="../resources/schedule.css" type="text/css"></link>
+	<link rel="stylesheet" href="../resources/css/schedule.css" type="text/css"></link>
 </head>
 <body>
 	<div align=center>
