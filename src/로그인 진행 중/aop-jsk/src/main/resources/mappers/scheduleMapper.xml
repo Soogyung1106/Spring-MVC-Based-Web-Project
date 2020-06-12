@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.kpu.myweb.mapper.ScheduleMapper">
+  
+ 	<select id="getTime" resultType="string">
+ 		select now()
+ 	</select>
+ 	
+ 	
+
+      <insert id="insert"> 
+   		insert into tk_schedule (schedule_subject, schedule_desc, schedule_date) values
+ 		(#{schedule_subject}, #{schedule_desc}, #{schedule_date})
+     </insert> 
+     
+     <select id="selectAll" resultType="org.kpu.myweb.domain.ScheduleVO">
+     <![CDATA[
+ 		
+    	select * from tk_schedule
+      ]]> 
+     </select>
+     
+     <select id="selectByIdx" resultType="ScheduleVO">
+ 		select * from tk_schedule where schedule_idx = #{schedule_idx}
+     </select>
+    
+     
+     <update id="update">
+	 	update tk_schedule set schedule_idx =#{schedule_idx}, schedule_subject =#{schedule_subject}, schedule_desc =#{schedule_desc}, schedule_date =#{schedule_date} 
+	 	where schedule_idx = #{schedule_idx}
+     </update>
+     
+     <delete id="delete">
+		delete from tk_schedule where schedule_idx = #{schedule_idx}
+     </delete>
+     
+	<update id="updateByIdx">
+ 		update tk_schedule set schedule_count = schedule_count+1 where schedule_idx = #{schedule_idx}
+    </update>    
+     
+     
+
+	
+</mapper>  

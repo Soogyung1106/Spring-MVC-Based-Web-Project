@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -46,6 +45,7 @@ public class CalendarController {
     	
 		logger.info(" /schedule/list URL called. then listSchedule method executed.");
         model.addAttribute("schedules", schedules);
+        //return "schedule/schedule_list";
         return "schedule/schedule_list";
     }
     
@@ -86,14 +86,15 @@ public class CalendarController {
         
 		return "redirect:/schedule/list";
     }
+
+  
 	
-   
-    //MemberControllerAdvice에 예외처리 기능적용    
-    /*
-    @ExceptionHandler(DataNotFoundException e)
+    
+/*  MemberControllerAdvice에 예외처리 기능적용    
+    @ExceptionHandler(DataNotFoundException.class)
     public String handleException(DataNotFoundException e) {
-        return "schedule/not_found";
+        return "member/not_found";
     }
-	*/
+*/
    
 }
