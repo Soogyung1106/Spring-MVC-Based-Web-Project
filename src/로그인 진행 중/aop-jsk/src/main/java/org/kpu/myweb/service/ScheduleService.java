@@ -22,6 +22,5 @@ public interface ScheduleService {
 	public void deleteSchedule(String schedule_idx) throws Exception; 
 	
 	
-	//public void updateScheduleList(ScheduleVO schedule1, ScheduleVO schedule2) throws Exception;
 	
 }

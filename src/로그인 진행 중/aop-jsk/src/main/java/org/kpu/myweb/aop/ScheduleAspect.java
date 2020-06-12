@@ -1,4 +1,4 @@
-package org.kpu.aop;
+package org.kpu.myweb.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -15,9 +15,9 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class ScheduleAspect {
-
-		@Before("execution(* *(..))") 
-	   //@Before("execution(* read(String))")
+		
+	
+		@Before("execution(* updateCount(String))")
 	   public void beforeMethod(JoinPoint jp) {
 	        System.out.println("[BeforeMethod] : 메소드 호출 전");
 	        Signature sig = jp.getSignature();
@@ -27,14 +27,13 @@ public class ScheduleAspect {
 	   }
 		
 		
-	    @After("execution(* *(..))")
-	    //@After("execution(* read(String))")
-	    public void afterMethod() {
+		@After("execution(* updateCount(String))")
+		public void afterMethod() {
 	        System.out.println("[AfterMethod] : 메소드 호출 후");
 	    }
 	    
-	    @AfterReturning(value = "execution(* *(..))", returning = "schedule")
-	    //@AfterReturning(value = "execution(* read(..))", returning = "schedule")
+	    
+	    @AfterReturning(value = "execution(* updateCount(..))", returning = "schedule")
 	    public void afterReturningMethod(JoinPoint jp, ScheduleVO schedule) {
 	    	System.out.println("[afterReturningMethod] : 메소드 호출 후");
 	        Signature sig = jp.getSignature();
@@ -43,8 +42,8 @@ public class ScheduleAspect {
 	        System.out.println(" 인수 값:" + obj[0]);
 	    }
 
-	    @Around("execution(* read(String))")
-	    //@Around("execution(* read(String))")
+	
+	    @Around("execution(* updateCount(String))")
 	    public ScheduleVO aroundMethod(ProceedingJoinPoint pjp) throws Throwable {
 	        System.out.println("[AroundMethod Before] : 메소드 호출 전");
 	        Signature sig = pjp.getSignature();
@@ -54,7 +53,8 @@ public class ScheduleAspect {
 	        System.out.println(" 메소드 이름:" + sig.getName());
 	        return schedule;
 	    }
-	    @AfterThrowing(value = "execution(* read(String))", throwing = "ex")
+	    
+	    @AfterThrowing(value = "execution(* updateCount(String))", throwing = "ex")
 	    public void afterThrowingMethod(Throwable ex) {
 	        // 메소드 호출이 예외를 내보냈을 때 호출되는 Advice
 	        System.out.println("[AfterThrowingMethod] : 예외 발생 후");

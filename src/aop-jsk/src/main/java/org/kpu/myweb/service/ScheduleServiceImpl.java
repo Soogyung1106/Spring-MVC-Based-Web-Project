@@ -13,8 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class ScheduleServiceImpl implements ScheduleService {
 	
-	//private static final Logger logger = LoggerFactory.getLogger(ScheduleServiceImpl.class);
-	
 	@Autowired
 	private ScheduleDAO scheduleDAO;
 
@@ -29,9 +27,6 @@ public class ScheduleServiceImpl implements ScheduleService {
 	
 	// 일정 조회와 조회수 상승(트랜잭션) 
 	public ScheduleVO readSchedule(String schedule_idx) throws Exception{
-		/* 원본
-		return scheduleDAO.read(schedule_idx);
-		*/
 		scheduleDAO.updateCount(schedule_idx); //조회수 상승
 		return scheduleDAO.read(schedule_idx); //일정 조회 -> 예외발생
 		
@@ -45,14 +40,7 @@ public class ScheduleServiceImpl implements ScheduleService {
 		scheduleDAO.delete(schedule_idx);
 	}
 	
-	//트랜잭션 함수
-	/*
-	public void updateScheduleList(ScheduleVO schedule1, ScheduleVO schedule2) throws Exception {
-		scheduleDAO.update(schedule2);
-		scheduleDAO.update(schedule1); //예외발생
-	}
-	*/
-	
+
 	
 	
 }

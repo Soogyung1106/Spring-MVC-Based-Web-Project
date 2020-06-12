@@ -11,6 +11,6 @@
 <body>
 	<h1>DataNotFoundException</h1>  
 	<c:url value="/schedule/list" var="url"/>
-	<a href="${url}">학생목록  화면가기</a>
+	<a href="${url}">스케줄  화면가기</a>
 </body>
 </html>

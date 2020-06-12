@@ -16,9 +16,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ScheduleAspect {
 		
-		//@Before("execution(* *(..))")
+	
 		@Before("execution(* updateCount(String))")
-	   //@Before("execution(* read(String))")
 	   public void beforeMethod(JoinPoint jp) {
 	        System.out.println("[BeforeMethod] : 메소드 호출 전");
 	        Signature sig = jp.getSignature();
@@ -28,15 +27,12 @@ public class ScheduleAspect {
 	   }
 		
 		
-		 //@After("execution(* *(..))")
-	    //@After("execution(* read(String))")
 		@After("execution(* updateCount(String))")
 		public void afterMethod() {
 	        System.out.println("[AfterMethod] : 메소드 호출 후");
 	    }
 	    
-	    //@AfterReturning(value = "execution(* *(..))", returning = "schedule")
-	    //@AfterReturning(value = "execution(* read(..))", returning = "schedule")
+	    
 	    @AfterReturning(value = "execution(* updateCount(..))", returning = "schedule")
 	    public void afterReturningMethod(JoinPoint jp, ScheduleVO schedule) {
 	    	System.out.println("[afterReturningMethod] : 메소드 호출 후");
@@ -46,8 +42,7 @@ public class ScheduleAspect {
 	        System.out.println(" 인수 값:" + obj[0]);
 	    }
 
-	    //@Around("execution(* read(String))")
-	    //@Around("execution(* read(String))")
+	
 	    @Around("execution(* updateCount(String))")
 	    public ScheduleVO aroundMethod(ProceedingJoinPoint pjp) throws Throwable {
 	        System.out.println("[AroundMethod Before] : 메소드 호출 전");
@@ -60,7 +55,6 @@ public class ScheduleAspect {
 	    }
 	    
 	    @AfterThrowing(value = "execution(* updateCount(String))", throwing = "ex")
-	    //@AfterThrowing(value = "execution(* read(String))", throwing = "ex")
 	    public void afterThrowingMethod(Throwable ex) {
 	        // 메소드 호출이 예외를 내보냈을 때 호출되는 Advice
 	        System.out.println("[AfterThrowingMethod] : 예외 발생 후");

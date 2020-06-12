@@ -47,14 +47,7 @@ public class ScheduleDAOImpl implements ScheduleDAO {
 		sqlSession.update(namespace + ".updateByIdx", schedule_idx);
 	}
 	
-	/*
-	public List<ScheduleVO> readList() throws Exception{
-		List<ScheduleVO> schedulelist = new ArrayList<ScheduleVO>();
-		schedulelist = sqlSession.selectList(namespace + ".selectAll");
-		return schedulelist;
-	}
-	*/
-	
+
 	
 
 

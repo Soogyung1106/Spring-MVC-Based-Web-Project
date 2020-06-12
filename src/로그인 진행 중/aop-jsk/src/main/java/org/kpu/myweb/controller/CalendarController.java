@@ -1,6 +1,9 @@
 package org.kpu.myweb.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import org.kpu.myweb.domain.ScheduleVO;
 import org.kpu.myweb.service.ScheduleService;
@@ -9,13 +12,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+@ControllerAdvice
 @Controller
 @RequestMapping(value="/schedule")
 public class CalendarController {
@@ -24,6 +28,7 @@ public class CalendarController {
     private ScheduleService scheduleService;
 
 	private static final Logger logger = LoggerFactory.getLogger(CalendarController.class);
+	
 	
 	@RequestMapping(value = {"/register"}, method = RequestMethod.GET)
 	public String createScheduleGet() throws Exception {
@@ -46,6 +51,7 @@ public class CalendarController {
     	
 		logger.info(" /schedule/list URL called. then listSchedule method executed.");
         model.addAttribute("schedules", schedules);
+        //return "schedule/schedule_list";
         return "schedule/schedule_list";
     }
     
@@ -86,14 +92,12 @@ public class CalendarController {
         
 		return "redirect:/schedule/list";
     }
-	
-   
-    //MemberControllerAdvice에 예외처리 기능적용    
-    /*
-    @ExceptionHandler(DataNotFoundException e)
+
+  
+    @ExceptionHandler(DataNotFoundException.class)
     public String handleException(DataNotFoundException e) {
         return "schedule/not_found";
     }
-	*/
+
    
 }

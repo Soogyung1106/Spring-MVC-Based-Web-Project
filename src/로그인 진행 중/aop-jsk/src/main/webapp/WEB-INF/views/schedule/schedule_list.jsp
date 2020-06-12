@@ -149,9 +149,7 @@ int intToday = Integer.parseInt(sdf.format(todayCal.getTime()));
 
 <!--날짜 네비게이션  -->
 
-<table width="100%" border="0" cellspacing="1" cellpadding="1" id="KOO" bgcolor="#193349" style="border:1px solid #193349; font-weight: bold" >
-
- 
+<table width="100%" border="0" cellspacing="1" cellpadding="1" id="KOO" bgcolor="#193349" style="border:1px solid #193349; font-weight: bold;">
 
 <tr>
 
